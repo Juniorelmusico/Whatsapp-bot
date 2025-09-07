@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: whatsapp-pdf-bot
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: BOT_NAME
+        value: Bot de Mamá
+      - key: WELCOME_MESSAGE
+        value: ¡Hola! Soy tu bot personal. Envíame cualquier texto y te lo convertiré a PDF. 📄
+      - key: PDF_CONFIRMATION_MESSAGE
+        value: ¿Quieres que convierta este texto a PDF? Responde "sí" para confirmar.
+      - key: PDF_GENERATED_MESSAGE
+        value: ¡PDF generado exitosamente! 📄✨
+      - key: ERROR_MESSAGE
+        value: Lo siento, hubo un error al procesar tu solicitud. Inténtalo de nuevo.
+      - key: PDF_FILENAME_PREFIX
+        value: texto_de_mama
+      - key: PDF_OUTPUT_DIR
+        value: ./pdfs
